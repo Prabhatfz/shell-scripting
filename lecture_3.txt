@@ -1,0 +1,30 @@
+date '+DATE:%m-%y%nTIME:%H:%M:%S'
+
+Rename file:
+mv Old_filename new_filename
+
+#Remove a file:
+rm file_name
+
+Remove Dir:
+rm -r directory_name
+rmdir directory_name
+
+Copy a file to another directory:
+cp file_to_be_copy directory/new_copied_file_name
+
+Hard Link:
+ln file_name link_name
+
+Soft Link:
+ln -s file_name soft_link_name
+
+What kind of file we have:
+file *
+
+Word Count:
+wc sample
+Output: No-of-lines No-of-words No-of-alphabets name_of_file
+wc -l sample #Just print the lines
+wc -w sample #No of words
+wc -c sample #No of characters
