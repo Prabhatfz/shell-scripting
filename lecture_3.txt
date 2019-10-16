@@ -28,3 +28,49 @@ Output: No-of-lines No-of-words No-of-alphabets name_of_file
 wc -l sample #Just print the lines
 wc -w sample #No of words
 wc -c sample #No of characters
+
+#Filter the content, -d is delimiter, -f is field which we want to display/filter
+cut -d"-" -f 1,2 sports #default delimter is tab
+
+dd if=test of=out conv=ucase #Inputfile=if, outputfile=of conv=convert
+dd if=test of=urope conv=ebcdic
+
+Fancy output of text provided:
+banner I am Prabhat
+
+Use "" if want to print on a single line.
+banner "bye bye" #10 char on a single line.
+
+ls -ltr
+
+compress -v unix #-v, shell will display the message about the % of compression it achived.
+zcat unix.Z #To view the compressed file.
+uncompress unix.Z
+
+Execute shell script:
+sh ss1.sh
+
+vi ss4.sh
+#This file takes a file name as an agument and renames it.
+mv $1 $2
+cat $2
+sh ss4.sh
+
+#In the below script, we are providing ss1.sh as an argument in $1.
+chmod 744 $1
+ls -ltr $1
+sh ss5.sh ss1.sh
+
+#We can use set directly to set the potional parameters.
+set scripting is cool!
+echo $* #echo all the potional parameters. It will print the value.
+echo $# , will print the total no of set pogitional paraments.
+
+#It will rename a file to file.name
+#where name is the login name of the user executing the script
+name=$1
+set `who am i`  #Reverse Quotes or Accent Graves.
+mv $name $name.$1
+
+#No of files or dir in my present direcotry, $# tells the total no of potinal parameters set by set commsnd.
+echo The total no of item on my desktop is=$#
