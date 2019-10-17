@@ -74,3 +74,68 @@ mv $name $name.$1
 
 #No of files or dir in my present direcotry, $# tells the total no of potinal parameters set by set commsnd.
 echo The total no of item on my desktop is=$#
+
+#airthmatic operations
+a=30 b=40
+echo `expr $a + $b`
+echo `expr $b - $b`
+echo `expr $a \* $b`
+echo `expr $a / $b`
+echo `expr $a % $b`
+
+##Operator Precedence
+a=30 b=15 c=4 d=45
+echo `expr $a \* \( $b  + $c \) / $d`
+
+##Math on Real Numbers, Floats
+#Floating Point Arithmatic
+a=10.5
+b=3.5
+c=`echo $a + $b | bc`  #Their should be no space between "c=`echo".
+d=`echo   $a - $b | bc`
+e=`echo $a \* $b | bc`
+f=`echo $a / $b | bc`
+echo $c $d $e $f
+
+sudo apt install bc
+
+##Escape Sequence
+#Excape Sequence
+echo "Thi si first line. \nthis is second"
+echo "This is carrier return. \rThis is the second part only." #'\r' is carriage return
+echo "This is carrier return. \tThis is the second part only." #'\t' is horizontal tab. 5 space.
+echo "This is carrier return. \b\b\b\b\b\bThis is the second part only."
+echo "\033[1mThis is carrier return. This is the second part only.\033[0m"
+echo "\033[7mThis is carrier return. This is the second part only.\033[0m"
+
+#define RESET   "\033[0m"
+#define BLACK   "\033[30m"      /* Black */
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"      /* Green */
+#define YELLOW  "\033[33m"      /* Yellow */
+#define BLUE    "\033[34m"      /* Blue */
+#define MAGENTA "\033[35m"      /* Magenta */
+#define CYAN    "\033[36m"      /* Cyan */
+#define WHITE   "\033[37m"      /* White */
+#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
+#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
+#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
+#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+
+##Tput Command
+#tput in action
+tput clear
+echo "Total numbr of rows on screen=\c"
+tput lines
+echo "Total number fo columns on the screen=\c"
+tput cols
+tput cup 15 20  #Go to 15 rows and 20th column
+tput bold
+echo "This is to test the bold"
+echo "\033[0mBye Bye"
+
+
+
